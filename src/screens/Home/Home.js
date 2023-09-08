@@ -5,9 +5,10 @@ import Header from '../../components/Header/Header'
 
 const Home = () => {
   return (
-    <>
+    <View style={styles.container}>
       <Header title={"Home"}/>
-    </>
+
+    </View>
   )
 }
 
