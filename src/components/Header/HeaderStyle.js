@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center'
     },
     text:{
-        fontSize: 30,
+        fontSize: 70,
         fontWeight: '500',
         color: COLORS.secondary
     }
