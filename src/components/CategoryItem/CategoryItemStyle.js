@@ -7,10 +7,11 @@ export const styles = StyleSheet.create({
         height: 200,
         width: '100%',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'flex-start'
     },
     text:{
-        fontSize: 70,
+        marginLeft: 40,
+        fontSize: 50,
         fontWeight: '500',
         color: COLORS.secondary
     }

@@ -1,15 +1,11 @@
 import React from 'react';
-import {FlatList, Text, View} from 'react-native';
+import {Text, View} from 'react-native';
 import { styles } from './CategoryItemStyle';
 
 const CategoryItem = ({title}) => {
     return (
         <View style={styles.container}>
-            <FlatList
-                data={categories}
-                keyExtractor={category => category}
-                renderItem={({item}) => <CategoryItem/>}
-            />
+            <Text style={styles.text}>{title}</Text>
         </View>
     );
 }
