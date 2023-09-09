@@ -5,7 +5,7 @@ import Card from '../Card/Card';
 
 const CategoryItem = ({categoryTitle}) => {
     return (
-        <Pressable>
+        <Pressable onPress={() => console.log(categoryTitle)}>
             <Card style={styles.cardContainer}>
                 <Text style={styles.text}>{categoryTitle}</Text>
             </Card>

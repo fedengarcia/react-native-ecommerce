@@ -4,7 +4,7 @@ import { COLORS } from "../../global/COLORS";
 export const styles = StyleSheet.create({
     container:{
         flex: 1,
-        backgroundColor: COLORS.primary,
+        backgroundColor: COLORS.backgroundGray1,
         shadowColor: '#000',
         shadowOffset: {height: 5, width: 3},
         elevation: 10,
