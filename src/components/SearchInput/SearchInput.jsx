@@ -24,20 +24,22 @@ const SearchInput = ({onSearch}) => {
                 onChangeText={setSearchInputValue}
                 placeholder="Search product"
             />
-            <Pressable onPress={search}>
-                <AntDesing
-                    name="search1"
-                    size={25}
-                    color={"black"}
-                />
-            </Pressable>
-            <Pressable onPress={clearInput}>
-                <AntDesing
-                    name="search1"
-                    size={25}
-                    color={"black"}
-                />
-            </Pressable>
+            <View style={styles.pressableContainer}>
+                <Pressable onPress={search}>
+                    <AntDesing
+                        name="search1"
+                        size={60}
+                        color={"white"}
+                    />
+                </Pressable>
+                <Pressable onPress={clearInput}>
+                    <AntDesing
+                        name="delete"
+                        size={60}
+                        color={"white"}
+                    />
+                </Pressable>
+            </View>
         </View>
     );
 }
