@@ -1,7 +1,7 @@
 import React from 'react';
 import {FlatList, Text, View} from 'react-native';
 import { styles } from './CategoriesStyle';
-import CategoryItem from '../CategoryItem/CategoryItem';
+import CategoryItem from '../Categories/CategoryItem/CategoryItem';
 import categories from '../../data/categories';
 
 const Categories = () => {
@@ -11,7 +11,7 @@ const Categories = () => {
                 style={styles.flatListContainer}
                 data={categories}
                 keyExtractor={category => category}
-                renderItem={({item}) => <CategoryItem categoryTitle={item}/>}
+                renderItem={({item}) => <CategoryItem title={item}/>}
             />
         </View>
     );

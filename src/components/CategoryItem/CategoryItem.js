@@ -1,12 +1,15 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Pressable, Text, View} from 'react-native';
 import { styles } from './CategoryItemStyle';
+import Card from '../Card/Card';
 
-const CategoryItem = ({title}) => {
+const CategoryItem = ({categoryTitle}) => {
     return (
-        <View style={styles.container}>
-            <Text style={styles.text}>{title}</Text>
-        </View>
+        <Pressable>
+            <Card style={styles.cardContainer}>
+                <Text style={styles.text}>{categoryTitle}</Text>
+            </Card>
+        </Pressable>
     );
 }
 
