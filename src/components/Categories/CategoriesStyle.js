@@ -3,16 +3,11 @@ import { COLORS } from "../../global/COLORS";
 
 export const styles = StyleSheet.create({
     container:{
+        flex: 1,
         backgroundColor: COLORS.primary,
-        height: 200,
         width: '100%',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'flex-start',
+        overflow: 'scroll'
     },
-    text:{
-        fontSize: 70,
-        fontWeight: '500',
-        color: COLORS.secondary
-    }
-
 })
