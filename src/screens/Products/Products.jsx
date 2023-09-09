@@ -1,6 +1,6 @@
 import { FlatList, Text, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import { Header, SearchInput } from '../../components'
+import { Card, Header, SearchInput } from '../../components'
 import products from '../../data/products'
 import { styles } from './ProductsStyle'
 
@@ -33,7 +33,7 @@ const Products = ({categorySelected}) => {
         <FlatList
           style={styles.flatList}
           data={productsList}
-          renderItem={({item}) => <View><Text>{item.title}</Text></View>}
+          renderItem={({item}) => <Card><Text style={{fontSize: 59}}>{item.title}</Text></Card>}
           keyExtractor={item => item.id}
         />
         
