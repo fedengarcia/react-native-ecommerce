@@ -8,8 +8,12 @@ export const styles = StyleSheet.create({
         backgroundColor: COLORS.primary,
     },
     productsListContainer:{
+        width:  '100%',
         paddingHorizontal: 15,
         flex: 1,
         marginTop: 15
+    },
+    flatList: {
+        width: '100%',
     }
 })

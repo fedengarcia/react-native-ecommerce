@@ -1,8 +1,8 @@
-import { FlatListComponent, Text, View } from 'react-native'
-import React, { useState } from 'react'
+import { FlatList, Text, View } from 'react-native'
+import React, { useEffect, useState } from 'react'
 import { Header, SearchInput } from '../../components'
 import products from '../../data/products'
-import styles from './ProductsStyle'
+import { styles } from './ProductsStyle'
 
 
 const Products = ({categorySelected}) => {
@@ -30,9 +30,10 @@ const Products = ({categorySelected}) => {
         onSearch={setKeyword}
       />
       <View style={styles.productsListContainer}>
-        <FlatListComponent
+        <FlatList
+          style={styles.flatList}
           data={productsList}
-          renderItem={() => <View>{item.title}</View>}
+          renderItem={({item}) => <View><Text>{item.title}</Text></View>}
           keyExtractor={item => item.id}
         />
         

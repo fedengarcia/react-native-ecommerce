@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Pressable, View } from 'react-native';
+import { Pressable, TextInput, View } from 'react-native';
 import { styles } from './SearchInputStyle';
 import AntDesing from "@expo/vector-icons/AntDesign";
 
@@ -19,7 +19,7 @@ const SearchInput = ({onSearch}) => {
     return (
         <View style={styles.container}>
             <TextInput
-                value={value}
+                value={searchInputValue}
                 style={styles.textInput}
                 onChangeText={setSearchInputValue}
                 placeholder="Search product"
