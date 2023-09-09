@@ -10,4 +10,7 @@ export const styles = StyleSheet.create({
         alignItems: 'flex-start',
         overflow: 'scroll'
     },
+    flatListContainer:{
+        width: '100%'
+    }
 })

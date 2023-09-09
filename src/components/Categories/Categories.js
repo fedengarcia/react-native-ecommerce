@@ -8,6 +8,7 @@ const Categories = () => {
     return (
         <View style={styles.container}>
             <FlatList
+                style={styles.flatListContainer}
                 data={categories}
                 keyExtractor={category => category}
                 renderItem={({item}) => <CategoryItem title={item}/>}
