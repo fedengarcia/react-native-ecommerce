@@ -1,7 +1,7 @@
 import React from 'react';
-import {Pressable, Text, View} from 'react-native';
-import { styles } from './CategoryItemStyle';
-import Card from '../Card/Card';
+import {Pressable, Text} from 'react-native';
+import { styles } from './CategoryItemStyles';
+import { Card } from '../../../../components';
 
 const CategoryItem = ({categoryTitle}) => {
     return (

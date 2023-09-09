@@ -1,14 +1,20 @@
-import { Text, View } from 'react-native'
+import { FlatList, Text, View } from 'react-native'
 import React from 'react';
 import { styles } from './HomeStyles';
-import Header from '../../components/Header/Header';
-import Categories from '../../components/Categories/Categories';
+import { Header } from '../../components';
+import { DATA_CATEGORIES } from '../../data/global_data';
+import {CategoryItem} from './components';
 
 const Home = () => {
   return (
     <View style={styles.container}>
-      <Header title={"Home"}/>
-      <Categories/>
+      <Header title={"Categories"}/>
+          <FlatList
+              style={styles.flatList}
+              data={DATA_CATEGORIES}
+              keyExtractor={category => category}
+              renderItem={({item}) => <CategoryItem categoryTitle={item}/>}
+          />
     </View>
   )
 }

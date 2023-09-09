@@ -1,4 +1,4 @@
-export default [
+export const DATA_CATEGORIES = [
     'smartphones',
     'laptops',
     'skincare',
