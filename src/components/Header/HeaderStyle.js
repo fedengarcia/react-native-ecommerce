@@ -12,7 +12,8 @@ export const styles = StyleSheet.create({
     text:{
         fontSize: 70,
         fontWeight: '500',
-        color: COLORS.secondary
+        color: COLORS.secondary,
+        fontFamily: 'PTSansRegular'
     }
 
 })
