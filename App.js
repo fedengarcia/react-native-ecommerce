@@ -1,9 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native';
-import { Home } from './src/screens';
+import { Home, Details } from './src/screens';
 import { Products } from './src/screens';
 import { useState } from 'react';
 import { useFonts } from 'expo-font';
 import fonts from './src/global/fonts';
+import products from './src/data/products';
 
 export default function App() {
   const [categorySelected,setCategorySelected] = useState('')
@@ -12,13 +13,14 @@ export default function App() {
   if(!fontsLoaded) return null;
 
   return (
-    <View style={styles.container}>
-      {categorySelected ?
-          <Products categorySelected={categorySelected}/> 
-        : 
-          <Home setCategorySelected={setCategorySelected}/>
-      }
-    </View>
+    <Details product={products[0]}/>
+    // <View style={styles.container}>
+    //   {categorySelected ?
+    //       <Products categorySelected={categorySelected}/> 
+    //     : 
+    //       <Home setCategorySelected={setCategorySelected}/>
+    //   }
+    // </View>
   );
 }
 
