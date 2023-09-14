@@ -6,13 +6,12 @@ export const styles = StyleSheet.create({
         marginHorizontal: 30,
         marginVertical: 10,
         padding: 10,
-        justifyContent: 'center',
-        alignItems:'center',
         // backgroundColor: COLORS.primary,
         height: 'auto',
         justifyContent: 'center',
-        alignItems: 'flex-start',
-        borderRadius: 20
+        alignItems: 'center',
+        borderRadius: 20,
+        width: '95%'
     },
     text:{
         marginLeft: 40,

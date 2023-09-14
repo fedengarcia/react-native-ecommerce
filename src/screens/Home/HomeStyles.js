@@ -5,10 +5,12 @@ export const styles = StyleSheet.create({
     container: {
         width: '100%',
         height:'100%',
-        alignItems:'flex-start',
-        backgroundColor: COLORS.primary
+        backgroundColor: COLORS.primary,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     flatList:{
-        width: '100%'
+        width: '85%',
+        minWidth: 90
     }
 })
