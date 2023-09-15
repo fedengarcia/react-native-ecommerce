@@ -1,12 +1,20 @@
 import React from 'react';
-import {Button, Text, View} from 'react-native';
+import {Button, Text, TouchableOpacity, View} from 'react-native';
 import { styles } from './HeaderStyle';
 
 const Header = ({title, navigation}) => {
     return (
         <View style={styles.container}>
-            {title !== "Categories" && <Button style={styles.buttonBack} onPress={() => navigation.goBack()} title="go back"/>}
-            <Text style={styles.text}>{title}</Text>
+            {title !== "Categories" && 
+                <View style={styles.actionHeaderContainer}>
+                    <TouchableOpacity style={styles.buttonBack} onPress={() => navigation.goBack()}>
+                            <Text style={styles.buttonBackText}>
+                                back
+                            </Text>
+                    </TouchableOpacity>
+                </View>
+            }
+            <Text style={{...styles.text, textAlign: title === "Categories" ? 'center' : 'left'}}>{title}</Text>
         </View>
     );
 }
