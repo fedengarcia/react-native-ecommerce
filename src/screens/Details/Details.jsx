@@ -3,7 +3,8 @@ import React from 'react'
 import { styles } from './DetailsStyle';
 import { Header } from '../../components'
 
-const Details = ({product}) => {
+const Details = ({route, navigation}) => {
+  const { product } = route.params;
   return (
     <View style={styles.container}>
       <Header title={'Detalle'}/>
