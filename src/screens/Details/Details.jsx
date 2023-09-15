@@ -7,7 +7,7 @@ const Details = ({route, navigation}) => {
   const { product } = route.params;
   return (
     <View style={styles.container}>
-      <Header title={'Detalle'}/>
+      <Header title={'Detalle'} navigation={navigation}/>
         <Image 
           style={styles.image}
           source={{uri: product.images[0]}}

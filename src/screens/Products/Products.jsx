@@ -24,11 +24,12 @@ const Products = ({navigation, route}) => {
 
   return (
     <View style={styles.container}>
-      <Header title={"Products"}/>
+      <Header title={"Products"} navigation={navigation}/>
       <SearchInput
         onSearch={setKeyword}
       />
       <View style={styles.productsListContainer}>
+        {productsList.length > 0 ?
         <FlatList
           style={styles.flatList}
           data={productsList}
@@ -37,8 +38,9 @@ const Products = ({navigation, route}) => {
             <Text style={{fontSize: 59}}>{item.title}</Text>
           </TouchableOpacity>}
           keyExtractor={item => item.id}
-        />
-        
+        />:
+          <Text>No hay productos para mostrar</Text>
+        }
       </View>
     </View>
   )
