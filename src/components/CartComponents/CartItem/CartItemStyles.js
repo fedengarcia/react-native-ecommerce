@@ -5,10 +5,11 @@ export const styles = StyleSheet.create({
     container:{
         flex:1,
         borderBottomWidth: 1,
-        borderBottomColor: COLORS.primary,
-        padding: 8,
+        borderBottomColor: COLORS.secondary,
+        padding: 20,
     },
     name:{
+        color: COLORS.secondary,
         fontSize: 18
     },
     details:{
@@ -17,6 +18,10 @@ export const styles = StyleSheet.create({
         flexWrap: "wrap",
         alignItems: "center",
         justifyContent: 'space-between'
+    },
+    detailsText:{
+        fontSize: 50,
+        color: COLORS.secondary,
     }
 
 })
