@@ -2,10 +2,13 @@ import React from 'react';
 import {Button, Text, TouchableOpacity, View} from 'react-native';
 import { styles } from './HeaderStyle';
 
+const hasBack = ['Categories', 'Cart']
+
+
 const Header = ({title, navigation}) => {
     return (
         <View style={styles.container}>
-            {title !== "Categories" && 
+            {!hasBack.includes(title) && 
                 <View style={styles.actionHeaderContainer}>
                     <TouchableOpacity style={styles.buttonBack} onPress={() => navigation.goBack()}>
                             <Text style={styles.buttonBackText}>

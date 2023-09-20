@@ -1,7 +1,7 @@
 import React from 'react';
-import {FlatList, Pressable, Text, View} from 'react-native';
+import {FlatList, Pressable, Text, TouchableOpacity, View} from 'react-native';
 import {styles} from './CartStyles';
-import { CartItem } from '../../components';
+import { CartItem, Header } from '../../components';
 
 const data = [{
     "id": 1,
@@ -60,21 +60,25 @@ const data = [{
 const Cart = ({navigation}) => {
     return (
         <View style={styles.container}>
-            <View style={styles.flatListContainer}>
-                <FlatList
-                    style={styles.flatList}
-                    data={data}
-                    keyExtractor={itemCart => itemCart.id}
-                    renderItem={({itemCart}) => <CartItem navigation={navigation} itemCart={itemCart}/>}
-                />
-            </View>
-            <View>
-                <View>
-                    <Text>{`Total $100`}</Text>
+            <Header title={'Cart'} navigation={navigation}/>
+            <FlatList
+                style={styles.flatList}
+                data={data}
+                keyExtractor={itemCart => itemCart.id}
+                renderItem={({itemCart}) => <CartItem navigation={navigation} itemCart={itemCart}/>}
+            />
+            <View style={styles.finalDetailsContainer}>
+                <View style={styles.finalPriceContainer}>
+                    <Text style={styles.finalPrice}>{`Total: $100`}</Text>
                 </View>
-                <Pressable>
-                    <Text>Confirm</Text>
-                </Pressable>
+                <View style={styles.cartActionsContainer}>
+                    <TouchableOpacity style={[styles.button, styles.buttonConfirm]}>
+                        <Text style={styles.buttonText}>Buy</Text>
+                    </TouchableOpacity >
+                    <TouchableOpacity style={[styles.button, styles.buttonDelete]}>
+                        <Text style={styles.buttonText}>Delete</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
         </View>
     );
