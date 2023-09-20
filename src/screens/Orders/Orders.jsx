@@ -67,19 +67,7 @@ const Orders = ({navigation}) => {
                 keyExtractor={itemCart => itemCart.id}
                 renderItem={({itemCart}) => <CartItem navigation={navigation} itemCart={itemCart}/>}
             />
-            <View style={styles.finalDetailsContainer}>
-                <View style={styles.finalPriceContainer}>
-                    <Text style={styles.finalPrice}>{`Total: $100`}</Text>
-                </View>
-                <View style={styles.cartActionsContainer}>
-                    <TouchableOpacity style={[styles.button, styles.buttonConfirm]}>
-                        <Text style={styles.buttonText}>Buy</Text>
-                    </TouchableOpacity >
-                    <TouchableOpacity style={[styles.button, styles.buttonDelete]}>
-                        <Text style={styles.buttonText}>Delete</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
+           
         </View>
     );
 }
