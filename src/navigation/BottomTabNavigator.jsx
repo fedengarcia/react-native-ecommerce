@@ -2,6 +2,7 @@ import * as React from 'react';
 import { createBottomTabNavigator  } from '@react-navigation/bottom-tabs';
 import CartNavigator from './CartNavigator';
 import HomeNavitagor from './HomeNavigator';
+import OrderNavigator from './OrderNavigator';
 import { StyleSheet } from "react-native";
 import { COLORS } from '../global/COLORS';
 import Feather from '@expo/vector-icons/Feather';
@@ -35,6 +36,16 @@ function BottomTabNavigator() {
             tabBarIconStyle: styles.icon,
             tabBarIcon: ({focused}) => (
               <Feather name="shopping-cart" size={50} color={focused ?  COLORS.secondary : '#FFF'}/>
+            )
+          }}
+        />
+        <BottomTab.Screen
+          name="OrderNav"
+          component={OrderNavigator}
+          options={{
+            tabBarIconStyle: styles.icon,
+            tabBarIcon: ({focused}) => (
+              <Feather name="list" size={50} color={focused ?  COLORS.secondary : '#FFF'}/>
             )
           }}
         />
