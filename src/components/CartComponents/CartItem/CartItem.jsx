@@ -3,11 +3,12 @@ import {Pressable, Text, TouchableOpacity, View, useWindowDimensions} from 'reac
 import { styles } from './CartItemStyles';
 import Feather from '@expo/vector-icons/Feather';
 import { COLORS } from '../../../global/COLORS';
+import Card from '../../Card/Card';
 
 const CartItem = ({itemCart, navigation}) => {
 
     return (
-        <View style={styles.container}>
+        <Card style={styles.container}>
             <View>
                 <Text style={styles.name}>{itemCart?.title}</Text>
             </View>
@@ -20,7 +21,7 @@ const CartItem = ({itemCart, navigation}) => {
                     <Feather name="trash" size={50} color={COLORS.secondary }/>
                 </TouchableOpacity>
             </View>
-        </View>
+        </Card>
     );
 }
 

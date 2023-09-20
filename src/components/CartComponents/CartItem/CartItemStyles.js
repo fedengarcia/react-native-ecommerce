@@ -7,6 +7,10 @@ export const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: COLORS.secondary,
         padding: 20,
+        backgroundColor: 'transparent',
+        margin: 10,
+        elevation: 1,
+
     },
     name:{
         color: COLORS.secondary,
