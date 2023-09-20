@@ -1,11 +1,11 @@
 import React from 'react';
-import {View} from 'react-native';
-import {Styles} from './CartStyles';
+import {Text, View} from 'react-native';
+import {styles} from './CartStyles';
 
 const Cart = () => {
     return (
-        <View style={Styles.container}>
-            
+        <View style={styles.container}>
+            <Text>HOla</Text>
         </View>
     );
 }
