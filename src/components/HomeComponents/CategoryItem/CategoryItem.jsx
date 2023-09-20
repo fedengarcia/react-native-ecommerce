@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import {Pressable, Text, View, useWindowDimensions} from 'react-native';
 import { styles } from './CategoryItemStyles';
-import { Card } from '../../../../components';
+import Card from '../../Card/Card';
 
 const CategoryItem = ({categorySelected, navigation}) => {
     // const { width} = useWindowDimensions();

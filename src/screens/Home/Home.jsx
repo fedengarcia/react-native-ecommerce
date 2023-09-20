@@ -1,9 +1,9 @@
 import { FlatList, Text, View } from 'react-native'
 import React from 'react';
 import { styles } from './HomeStyles';
-import { Header } from '../../components';
+import { CategoryItem, Header } from '../../components';
 import { DATA_CATEGORIES } from '../../data/global_data';
-import {CategoryItem} from './components';
+
 
 const Home = ({navigation}) => {
   return (
