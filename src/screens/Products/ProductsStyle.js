@@ -10,15 +10,14 @@ export const styles = StyleSheet.create({
     },
     productsListContainer:{
         width:  '100%',
-        justifyContent:'center',
-        alignItems:'center',
-        paddingHorizontal: 15,
-        flex: 1,
+        paddingHorizontal: 10,
         marginTop: 15,
     },
     flatList: {
         width: '100%',
-        // flexDirection: 'row',
-        // flexWrap: 'wrap'
+    },
+    itemContainer:{
+        width:'50%',
     }
+
 })

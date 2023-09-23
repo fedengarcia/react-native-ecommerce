@@ -33,10 +33,12 @@ const Products = ({navigation, route}) => {
         {productsList.length > 0 ?
         <FlatList
           style={styles.flatList}
+          numColumns={2}
+          horizontal={false}
           data={productsList}
-          keyExtractor={item => item.id}
+          keyExtractor={this.keyExtractor}
           renderItem={({item}) => 
-          <TouchableOpacity onPress={() => navigation.navigate("Details", {product: item})}>
+          <TouchableOpacity style={styles.itemContainer} onPress={() => navigation.navigate("Details", {product: item})}>
             <ProductItem product={item}/>
           </TouchableOpacity>}
         />:

@@ -21,9 +21,6 @@ const ProductItem = ({product, navigation}) => {
                     <Text style={styles.detailsText}>{product.description}</Text>
                     <Text style={styles.detailsText}>Precio: ${product?.price}</Text>
                 </View>
-                {/* <TouchableOpacity>
-                    <Feather name="trash" size={50} color={COLORS.secondary }/>
-                </TouchableOpacity> */}
             </View>
         </Card>
     );
