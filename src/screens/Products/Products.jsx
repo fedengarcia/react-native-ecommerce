@@ -1,8 +1,8 @@
 import { FlatList, Text, TouchableOpacity, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { Card, Header, SearchInput } from '../../components'
-import products from '../../data/products'
 import { styles } from './ProductsStyle'
+import { DATA_PRODUCTS } from '../../data/products'
 
 
 const Products = ({navigation, route}) => {
@@ -13,10 +13,10 @@ const Products = ({navigation, route}) => {
   useEffect(() => {
     let productsFiltered = []
     if(categorySelected){
-      const productsSelected = products.filter(prod => prod.category === categorySelected);
+      const productsSelected = DATA_PRODUCTS.filter(prod => prod.category === categorySelected);
       productsFiltered = productsSelected.filter(prod => prod.title.includes(keyword));
     }else{
-      productsFiltered = products.filter(prod => prod.title.includes(keyword));
+      productsFiltered = DATA_PRODUCTS.filter(prod => prod.title.includes(keyword));
     }
     setProductsList(productsFiltered);
 
