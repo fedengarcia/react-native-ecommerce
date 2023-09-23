@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Card, Header, SearchInput } from '../../components'
 import { styles } from './ProductsStyle'
 import { DATA_PRODUCTS } from '../../data/products'
+import ProductItem from '../../components/ProductsComponents/ProductItem/ProductItem'
 
 
 const Products = ({navigation, route}) => {
@@ -33,11 +34,11 @@ const Products = ({navigation, route}) => {
         <FlatList
           style={styles.flatList}
           data={productsList}
+          keyExtractor={item => item.id}
           renderItem={({item}) => 
           <TouchableOpacity onPress={() => navigation.navigate("Details", {product: item})}>
-            <Text style={{fontSize: 59}}>{item.title}</Text>
+            <ProductItem product={item}/>
           </TouchableOpacity>}
-          keyExtractor={item => item.id}
         />:
           <Text>No hay productos para mostrar</Text>
         }
