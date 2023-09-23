@@ -60,7 +60,7 @@ const data = [{
 const Orders = ({navigation}) => {
     return (
         <View style={styles.container}>
-            <Header title={'Cart'} navigation={navigation}/>
+            <Header title={'Orders'} navigation={navigation}/>
             <FlatList
                 style={styles.flatList}
                 data={data}
