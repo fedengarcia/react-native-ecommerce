@@ -1,15 +1,21 @@
 import { Text, View } from 'react-native'
 import React from 'react'
-import { Header } from '../../components'
+import { CategoryItem, Header } from '../../components'
+import {styles} from "./CategoriesListStyle"
 
-const CategoriesList = ({category}) => {
+const CategoriesList = ({navigation}) => {
   return (
-    <>
-      <Header title={category}/>
-      <View styles={styles.container}>
-        <Text>Categories list</Text>
+    <View style={styles.container}>
+      <Header title={"Categories"}/>
+      <View style={styles.categoriesContainer}>
+          <FlatList
+              style={styles.flatList}
+              data={DATA_CATEGORIES}
+              keyExtractor={category => category}
+              renderItem={({item}) => <CategoryItem navigation={navigation} categorySelected={item}/>}
+              />
       </View>
-    </>
+    </View>
   )
 }
 
