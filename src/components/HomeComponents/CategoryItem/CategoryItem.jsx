@@ -7,7 +7,7 @@ const CategoryItem = ({categorySelected, navigation}) => {
     // const { width} = useWindowDimensions();
 
     return (
-        <Pressable onPress={() => navigation.navigate("Products", {categorySelected})}>
+        <Pressable onPress={() => navigation.navigate("Home", {categorySelected})}>
             <Card style={styles.cardContainer}>
                 <View>
                     <Text style={styles.text}>{categorySelected}</Text>
