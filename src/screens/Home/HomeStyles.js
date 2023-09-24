@@ -18,6 +18,11 @@ export const styles = StyleSheet.create({
     },
     itemContainer:{
         width:'50%',
+    },
+    noResultsText:{
+        fontSize: 60,
+        textAlign: 'center',
+        color: COLORS.backgroundWhite
     }
 
 })

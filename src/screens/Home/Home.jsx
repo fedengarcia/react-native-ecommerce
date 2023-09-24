@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Card, Filters, Header, SearchInput } from '../../components'
 import { styles } from './HomeStyles'
 import { DATA_PRODUCTS } from '../../data/products'
-import ProductItem from '../../components/ProductsComponents/ProductItem/ProductItem'
+import ProductItem from '../../components/HomeComponents/ProductItem/ProductItem'
 
 
 const Home = ({navigation, router}) => {
@@ -44,7 +44,7 @@ const Home = ({navigation, router}) => {
             <ProductItem product={item}/>
           </TouchableOpacity>}
         />:
-          <Text>No hay productos para mostrar</Text>
+          <Text style={styles.noResultsText}>No hay productos para mostrar</Text>
         }
       </View>
     </View>
