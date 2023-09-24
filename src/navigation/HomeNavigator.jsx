@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Details, Home, Products } from '../screens';
+import { CategoriesList, Details, Home, Products } from '../screens';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,7 +18,7 @@ function HomeNavitagor() {
         })}
       >
         <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Products" component={Products} />
+        <Stack.Screen name="Categories" component={CategoriesList} />
         <Stack.Screen name="Details" component={Details} />
       </Stack.Navigator>
   );
