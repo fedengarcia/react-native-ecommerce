@@ -9,12 +9,14 @@ const Home = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Header title={"Categories"}/>
+      <View style={styles.categoriesContainer}>
           <FlatList
               style={styles.flatList}
               data={DATA_CATEGORIES}
               keyExtractor={category => category}
               renderItem={({item}) => <CategoryItem navigation={navigation} categorySelected={item}/>}
-          />
+              />
+      </View>
     </View>
   )
 }
