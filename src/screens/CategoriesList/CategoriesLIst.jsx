@@ -7,7 +7,7 @@ import {DATA_CATEGORIES} from '../../data/global_data';
 const CategoriesList = ({navigation}) => {
   return (
     <View style={styles.container}>
-      <Header title={"Categories"}/>
+      <Header title={"Categories"} navigation={navigation}/>
       <View style={styles.categoriesContainer}>
           <FlatList
               style={styles.flatList}

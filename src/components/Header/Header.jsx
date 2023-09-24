@@ -2,7 +2,7 @@ import React from 'react';
 import {Button, Text, TouchableOpacity, View} from 'react-native';
 import { styles } from './HeaderStyle';
 
-const hasBack = ['Categories', 'Cart']
+const hasBack = ['Home', 'Cart']
 
 
 const Header = ({title, navigation}) => {
@@ -17,7 +17,7 @@ const Header = ({title, navigation}) => {
                     </TouchableOpacity>
                 </View>
             }
-            <Text style={{...styles.text, textAlign: title === "Categories" ? 'center' : 'left'}}>{title}</Text>
+            <Text style={{...styles.text, textAlign: title === "Home" ? 'center' : 'left'}}>{title}</Text>
         </View>
     );
 }
