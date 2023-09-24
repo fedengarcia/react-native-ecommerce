@@ -3,22 +3,22 @@ import { COLORS } from "../../../global/COLORS";
 
 export const styles = StyleSheet.create({
     cardContainer:{
-        marginHorizontal: 30,
-        marginVertical: 10,
-        padding: 10,
-        // backgroundColor: COLORS.primary,
+        marginHorizontal: 50,
+        marginVertical: 20,
+        paddingVertical: 10,
+        paddingHorizontal: 10,
+        backgroundColor: COLORS.backgroundWhite,
         height: 'auto',
-        justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 20,
-        width: '95%'
+        width: 'auto'
     },
     text:{
         marginLeft: 40,
         padding: 20,
         fontSize: 50,
         fontWeight: '500',
-        color: COLORS.secondary
+        color: COLORS.primary
     }
 
 })
