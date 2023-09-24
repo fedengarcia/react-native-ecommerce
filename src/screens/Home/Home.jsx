@@ -1,16 +1,16 @@
 import { FlatList, Text, TouchableOpacity, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import { Card, Header, SearchInput } from '../../components'
+import { Card, Filters, Header, SearchInput } from '../../components'
 import { styles } from './HomeStyles'
 import { DATA_PRODUCTS } from '../../data/products'
 import ProductItem from '../../components/ProductsComponents/ProductItem/ProductItem'
 
 
-const Home = ({navigation}) => {
+const Home = ({navigation, router}) => {
   const [productsList, setProductsList] = useState([]);
-  const [categorySelected, setCategorySelected] = useState('all');
+  const [categorySelected, setCategorySelected] = useState(router?.params?.categorySelected ?? 'all');
   const [keyword, setKeyword] = useState('');
-  console.log("YOUR CATEGORY")
+  console.log("YOUR CATEGORY", router?.params)
 
   useEffect(() => {
     let productsFiltered = []
@@ -30,6 +30,7 @@ const Home = ({navigation}) => {
       <SearchInput
         onSearch={setKeyword}
       />
+      <Filters navigation={navigation}/>
       <View style={styles.productsListContainer}>
         {productsList.length > 0 ?
         <FlatList
