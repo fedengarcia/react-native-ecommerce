@@ -7,7 +7,7 @@ const SearchInput = ({onSearch}) => {
     const [searchInputValue, setSearchInputValue] = useState('');
     
     const search = () => {
-        onSearch(value);
+        onSearch(searchInputValue);
     }
 
 
