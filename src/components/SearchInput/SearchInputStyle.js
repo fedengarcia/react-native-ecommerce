@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 30
     },
     textInput:{
-        color: COLORS.secondary,
+        color: COLORS.primary,
         backgroundColor: COLORS.backgroundGray1,
         borderRadius: 10,
         borderWidth: 1,
