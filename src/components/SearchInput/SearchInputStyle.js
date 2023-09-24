@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
         elevation: 10,
         shadowOpacity: 1,
         shadowRadius: 1,
-        paddingHorizontal: 20
+        paddingHorizontal: 30
     },
     textInput:{
         color: COLORS.secondary,
