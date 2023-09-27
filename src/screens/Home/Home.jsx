@@ -5,24 +5,22 @@ import { styles } from './HomeStyles'
 import { DATA_PRODUCTS } from '../../data/products'
 import ProductItem from '../../components/HomeComponents/ProductItem/ProductItem'
 import { useSelector } from 'react-redux'
+import { useGetProductsByCategoryQuery, useGetProductsQuery } from '../../services/shopAPI'
 
 
 const Home = ({navigation}) => {
   const [productsList, setProductsList] = useState([]);
   const [keyword, setKeyword] = useState('');
   const categorySelected = useSelector(state => state.shop.categorySelected)
+  const {data, isLoading} = categorySelected === 'all' ? useGetProductsQuery() : useGetProductsByCategoryQuery(categorySelected)
 
   useEffect(() => {
-    let productsFiltered = []
-    if(categorySelected !== 'all'){
-      const productsSelected = DATA_PRODUCTS.filter(prod => prod.category === categorySelected);
-      productsFiltered = productsSelected.filter(prod => prod.title.includes(keyword));
-    }else{
-      productsFiltered = DATA_PRODUCTS.filter(prod => prod.title.includes(keyword));
+    if(data){
+      const productsSelected = data.filter(prod => prod.title.includes(keyword));
+      setProductsList(productsSelected);
     }
-    setProductsList(productsFiltered);
 
-  }, [keyword, categorySelected]);
+  }, [keyword]);
 
   return (
     <View style={styles.container}>
@@ -32,12 +30,12 @@ const Home = ({navigation}) => {
       />
       <Filters navigation={navigation}/>
       <View style={styles.productsListContainer}>
-        {productsList.length > 0 ?
+        {data?.length > 0 ?
         <FlatList
           style={styles.flatList}
           numColumns={2}
           horizontal={false}
-          data={productsList}
+          data={keyword !== "" ? productsList : data}
           keyExtractor={this.keyExtractor}
           renderItem={({item}) => 
           <TouchableOpacity style={styles.itemContainer} onPress={() => navigation.navigate("Details", {product: item})}>
