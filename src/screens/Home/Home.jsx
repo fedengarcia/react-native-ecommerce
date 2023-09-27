@@ -14,7 +14,7 @@ const Home = ({navigation}) => {
 
   useEffect(() => {
     let productsFiltered = []
-    if(categorySelected){
+    if(categorySelected !== 'all'){
       const productsSelected = DATA_PRODUCTS.filter(prod => prod.category === categorySelected);
       productsFiltered = productsSelected.filter(prod => prod.title.includes(keyword));
     }else{

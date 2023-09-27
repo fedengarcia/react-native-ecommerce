@@ -6,7 +6,7 @@ const initialState = {
     categories: DATA_CATEGORIES,
     producs: DATA_PRODUCTS,
     productsFilterByCategory: [],
-    categorySelected: null,
+    categorySelected: 'all',
     productIdSelected: null,
 }
 
