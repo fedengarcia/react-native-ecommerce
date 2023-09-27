@@ -11,7 +11,7 @@ const Home = ({navigation}) => {
   const [productsList, setProductsList] = useState([]);
   const [keyword, setKeyword] = useState('');
   const categorySelected = useSelector(state => state.shop.categorySelected)
-  console.log(categorySelected)
+
   useEffect(() => {
     let productsFiltered = []
     if(categorySelected){
