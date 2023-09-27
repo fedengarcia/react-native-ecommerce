@@ -13,7 +13,7 @@ const CategoriesList = ({navigation}) => {
               style={styles.flatList}
               data={DATA_CATEGORIES}
               keyExtractor={category => category}
-              renderItem={({item}) => <CategoryItem navigation={navigation} categorySelected={item}/>}
+              renderItem={({item}) => <CategoryItem navigation={navigation} categoryName={item}/>}
               />
       </View>
     </View>

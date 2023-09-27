@@ -4,17 +4,17 @@ import { Card, Filters, Header, SearchInput } from '../../components'
 import { styles } from './HomeStyles'
 import { DATA_PRODUCTS } from '../../data/products'
 import ProductItem from '../../components/HomeComponents/ProductItem/ProductItem'
+import { useSelector } from 'react-redux'
 
 
 const Home = ({navigation, router}) => {
   const [productsList, setProductsList] = useState([]);
-  const [categorySelected, setCategorySelected] = useState(router?.params?.categorySelected ?? 'all');
   const [keyword, setKeyword] = useState('');
-  console.log("YOUR CATEGORY", router?.params)
+  const categorySelected = useSelector(state => state.shop.categorySelected)
 
   useEffect(() => {
     let productsFiltered = []
-    if(categorySelected !== 'all'){
+    if(categorySelected){
       const productsSelected = DATA_PRODUCTS.filter(prod => prod.category === categorySelected);
       productsFiltered = productsSelected.filter(prod => prod.title.includes(keyword));
     }else{
