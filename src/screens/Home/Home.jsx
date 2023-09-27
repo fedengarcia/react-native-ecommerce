@@ -7,11 +7,11 @@ import ProductItem from '../../components/HomeComponents/ProductItem/ProductItem
 import { useSelector } from 'react-redux'
 
 
-const Home = ({navigation, router}) => {
+const Home = ({navigation}) => {
   const [productsList, setProductsList] = useState([]);
   const [keyword, setKeyword] = useState('');
   const categorySelected = useSelector(state => state.shop.categorySelected)
-
+  console.log(categorySelected)
   useEffect(() => {
     let productsFiltered = []
     if(categorySelected){
@@ -22,7 +22,7 @@ const Home = ({navigation, router}) => {
     }
     setProductsList(productsFiltered);
 
-  }, [keyword]);
+  }, [keyword, categorySelected]);
 
   return (
     <View style={styles.container}>
