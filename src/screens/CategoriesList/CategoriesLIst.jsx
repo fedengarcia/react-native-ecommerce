@@ -6,15 +6,15 @@ import { useGetCategoriesQuery } from '../../services/shopAPI';
 
 const CategoriesList = ({navigation}) => {
   const {data, isLoading} = useGetCategoriesQuery();
-  console.log(data)
+
   return (
     <View style={styles.container}>
       <Header title={"Categories"} navigation={navigation}/>
       <View style={styles.categoriesContainer}>
-          {isLoading ? 'cargando' :
+          {isLoading ? <Text>cargando</Text> :
           <FlatList
               style={styles.flatList}
-              data={data}
+              data={Object.values(data)}
               keyExtractor={category => category.title}
               renderItem={({item}) => <CategoryItem navigation={navigation} categoryName={item?.title}/>}
               />}
