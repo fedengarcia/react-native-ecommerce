@@ -8,16 +8,18 @@ const hasBack = ['Home', 'Cart']
 const Header = ({title, navigation}) => {
     return (
         <View style={styles.container}>
-            {!hasBack.includes(title) && 
-                <View style={styles.actionHeaderContainer}>
+            
+            <View style={styles.actionHeaderContainer}>
+                {!hasBack.includes(title) && 
                     <TouchableOpacity style={styles.buttonBack} onPress={() => navigation.goBack()}>
                             <Text style={styles.buttonBackText}>
                                 back
                             </Text>
                     </TouchableOpacity>
-                </View>
-            }
-            <Text style={{...styles.text, textAlign: title === "Home" ? 'center' : 'left'}}>{title}</Text>
+                }
+            </View>
+            
+            <Text style={{...styles.text}}>{title}</Text>
         </View>
     );
 }

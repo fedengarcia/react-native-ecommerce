@@ -6,21 +6,22 @@ export const styles = StyleSheet.create({
         backgroundColor: COLORS.primary,
         height: 'auto',
         width: '100%',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center'
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingTop: 60
     },
     text:{
-        width: '95%',
+        width: '100%',
         margin: 50,
+        marginLeft: 200,
         fontSize: 70,
         fontWeight: '500',
         color: COLORS.secondary,
         fontFamily: 'PTSansRegular'
     },
     actionHeaderContainer:{
-        marginTop: 40,
-        width: '100%',
+        width: '20%',
         alignItems:'flex-start',
     },
     buttonBack: {
