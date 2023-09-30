@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: COLORS.backgroundGray1,
         backgroundColor: COLORS.backgroundGray1,
-        borderRadius: 10
+        borderRadius: 20,
     },
     image:{
         width: '100%',
@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
         borderRadius: 10
     },
     name:{
-        color: COLORS.secondary,
+        color: COLORS.primary,
         fontSize: 80,
         margin: 10,
     },
@@ -34,7 +34,7 @@ export const styles = StyleSheet.create({
     detailsText:{
         fontSize: 50,
         margin: 10,
-        color: COLORS.secondary,
+        color: COLORS.primary,
     }
 
 })
