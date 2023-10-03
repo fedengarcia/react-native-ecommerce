@@ -14,8 +14,8 @@ const CartItem = ({itemCart, navigation}) => {
             </View>
             <View style={styles.details}>
                 <View>
-                    <Text style={styles.detailsText}>Cantidad: 2</Text>
-                    <Text style={styles.detailsText}>Precio: {itemCart?.price}</Text>
+                    <Text style={styles.detailsText}>{`Cantidad: ${itemCart?.quantity}`}</Text>
+                    <Text style={styles.detailsText}>{`Precio: ${itemCart?.price}`}</Text>
                 </View>
                 <TouchableOpacity>
                     <Feather name="trash" size={50} color={COLORS.secondary }/>

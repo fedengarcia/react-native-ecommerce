@@ -6,9 +6,10 @@ import { useSelector } from 'react-redux';
 
 
 const Cart = ({navigation}) => {
-  const cart = useSelector(state.cart.items);
-  const total = useSelector(state.cart.total);
+  const cart = useSelector(state => state.cart.items);
+  const total = useSelector(state => state.cart.total);
 
+  
 
     return (
         <View style={styles.container}>
@@ -16,8 +17,8 @@ const Cart = ({navigation}) => {
             <FlatList
                 style={styles.flatList}
                 data={cart}
-                keyExtractor={itemCart => itemCart.id}
-                renderItem={({itemCart}) => <CartItem navigation={navigation} itemCart={itemCart}/>}
+                keyExtractor={item => item.id}
+                renderItem={({item}) => <CartItem navigation={navigation} itemCart={item}/>}
             />
             <View style={styles.finalDetailsContainer}>
                 <View style={styles.finalPriceContainer}>

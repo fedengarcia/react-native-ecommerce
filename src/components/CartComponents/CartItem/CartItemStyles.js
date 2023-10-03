@@ -10,11 +10,10 @@ export const styles = StyleSheet.create({
         backgroundColor: 'transparent',
         margin: 10,
         elevation: 1,
-
     },
     name:{
         color: COLORS.secondary,
-        fontSize: 18
+        fontSize: 50
     },
     details:{
         flex: 1,
