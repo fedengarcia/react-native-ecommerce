@@ -15,7 +15,7 @@ const SingUp = ({navigation}) => {
                 <TextInput style={styles.input}/>
                 <TextInput style={styles.input}/>
                 <TouchableOpacity style={styles.button}>
-                  <Text style={styles.buttonText}>Login</Text>
+                  <Text style={styles.buttonText}>Sing up</Text>
                 </TouchableOpacity>
                   <Text style={styles.notAccountText}>Already have an account?</Text>
                   <TouchableOpacity  style={styles.button}>

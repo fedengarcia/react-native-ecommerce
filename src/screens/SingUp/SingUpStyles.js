@@ -38,6 +38,7 @@ export const styles = StyleSheet.create({
         marginVertical: 20,
     },
     notAccountText:{
+        marginBottom: 20,
         marginTop: 40,
         fontSize: 40,
     },

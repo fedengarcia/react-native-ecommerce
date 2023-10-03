@@ -39,6 +39,7 @@ export const styles = StyleSheet.create({
     },
     notAccountText:{
         marginTop: 40,
+        marginBottom: 20,
         fontSize: 40,
     },
     button: {
