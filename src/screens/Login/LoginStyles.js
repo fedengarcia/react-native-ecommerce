@@ -31,6 +31,8 @@ export const styles = StyleSheet.create({
         fontSize: 60,
     },
     input: {
+        fontSize: 50,
+        color: COLORS.secondary,
         borderRadius: 20,
         backgroundColor: COLORS.backgroundGray2,
         width: '100%',
