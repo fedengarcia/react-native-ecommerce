@@ -8,7 +8,7 @@ export const authApi = createApi({
         baseUrl: authUrl
     }),
     endpoints: (builder) => ({
-        singUp: builder.mutation({
+        signUp: builder.mutation({
             query: ({...auth}) => ({
                 url: `accounts:signUp?key=${apiKey}`,
                 method: 'POST',
@@ -26,6 +26,6 @@ export const authApi = createApi({
 })
 
 export const {
-    useLoginMutation,
-    useSingUpMutation
+    useSignUpMutation,
+    useLoginMutation
 } = authApi;
