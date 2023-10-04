@@ -17,7 +17,7 @@ const Login = ({navigation}) => {
                   <Text style={styles.buttonText}>Login</Text>
                 </TouchableOpacity>
                   <Text style={styles.notAccountText}>No have an account?</Text>
-                  <TouchableOpacity  style={styles.button} onPress={() => navigation.navigate("Singup")}>
+                  <TouchableOpacity  style={styles.button} onPress={() => navigation.navigate("Signup")}>
                     <Text style={styles.buttonText}>Sign up</Text>
                   </TouchableOpacity>
               </Card>
