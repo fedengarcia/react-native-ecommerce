@@ -4,6 +4,6 @@ import Cart from "./Cart/Cart";
 import Orders from "./Orders/Orders";
 import CategoriesList from './CategoriesList/CategoriesLIst';
 import Login from './Login/Login';
-import SingUp from './SingUp/SingUp';
+import SignUp from './SignUp/SignUp';
 
-export {Home, Details, Cart, Orders, CategoriesList, Login, SingUp}
+export {Home, Details, Cart, Orders, CategoriesList, Login, SignUp}
