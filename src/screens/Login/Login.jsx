@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {FlatList, Pressable, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import {styles} from './LoginStyles';
-import { Card, Header } from '../../components';
+import { Card } from '../../components';
 import { useLoginMutation } from '../../services/authAPI';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../features/auth/authSlice';
