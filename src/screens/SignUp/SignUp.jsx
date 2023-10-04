@@ -4,6 +4,7 @@ import {styles} from './SignUpStyles';
 import { Card } from '../../components';
 import { useSignUpMutation } from '../../services/authAPI';
 import { useDispatch } from 'react-redux';
+import { setUser } from '../../features/auth/authSlice';
 
 
 const SignUp = ({navigation}) => {
@@ -19,6 +20,9 @@ const SignUp = ({navigation}) => {
       password
     })
     console.log(result)
+    if(result.isSuccess){
+      dispatch(setUser(result))
+    }
   }
 
 
