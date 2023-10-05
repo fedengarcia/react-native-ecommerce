@@ -5,7 +5,7 @@ import { Header } from '../../components';
 import * as ImagePicker from 'expo-image-picker';
 import { useDispatch, useSelector } from 'react-redux';
 import ProfilePicture from '../../../assets/profilePic.png';
-import { setCameraImage, setProfileImage } from '../../features/auth/authSlice';
+import { setProfileImage } from '../../features/auth/authSlice';
 
 
 
@@ -32,7 +32,7 @@ const Profile = ({navigation}) => {
         quality: 0.4
       });
 
-      if (!result.canceled) setImage(`data:image/jpeg;base64,${result.assets[0].base64}`);
+      if (!result.canceled) dispatch(setProfileImage(`${result.assets[0].uri}`));
       
     }
   }
@@ -40,13 +40,13 @@ const Profile = ({navigation}) => {
   const confirmImage = () => {
     dispatch(setProfileImage(imageProfile))
   }
-  
   return (
       <View style={styles.container}>
          <Header title={"Profile"}/>
          <View style={styles.profileContainer}>
             <View style={styles.imageProfileContainer}>
-              <Image style={styles.image} source={imageProfile ?? ProfilePicture}/>
+              {imageProfile ? <Image style={styles.image} source={{uri: imageProfile }}/>
+              : <Image style={styles.image} source={ProfilePicture}/>}
               <TouchableOpacity style={styles.cameraButton} onPress={pickImage}>
                 <Text style={styles.buttonText}>{imageProfile ? 'Modify profile picture' : 'Add profile picture'}</Text>
               </TouchableOpacity>
