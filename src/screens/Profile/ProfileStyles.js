@@ -28,7 +28,7 @@ export const styles = StyleSheet.create({
         marginBottom: 20
     },
     cameraButton: {
-        width: '70%',
+        width: '80%',
         borderRadius: 10,
         padding: 10,
         backgroundColor: COLORS.secondary
