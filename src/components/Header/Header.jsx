@@ -2,7 +2,7 @@ import React from 'react';
 import {Button, Text, TouchableOpacity, View} from 'react-native';
 import { styles } from './HeaderStyle';
 
-const hasBack = ['Home', 'Cart']
+const hasBack = ['Home', 'Cart', "Profile"]
 
 
 const Header = ({title, navigation}) => {
