@@ -11,18 +11,16 @@ const SignUp = ({navigation}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [triggerSignUp, result] = useSignUpMutation();
+  const [triggerSignUp] = useSignUpMutation();
   const dispatch = useDispatch();
 
   const handleSignUp = () => {
     triggerSignUp({
       email,
       password
-    })
-    console.log(result)
-    if(result.isSuccess){
+    }).then(result => {
       dispatch(setUser(result))
-    }
+    }).catch(err => console.log(err))
   }
 
 

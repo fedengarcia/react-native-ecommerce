@@ -10,18 +10,16 @@ import { setUser } from '../../features/auth/authSlice';
 const Login = ({navigation}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [triggerLogin, result] = useLoginMutation();
+  const [triggerLogin] = useLoginMutation();
   const dispatch = useDispatch();
 
   const handleLogin = () => {
     triggerLogin({
       email,
       password
-    })
-    console.log(result)
-    if(result.isSuccess){
+    }).then(result => {
       dispatch(setUser(result))
-    }
+    }).catch(err => console.log(err))
   }
 
 
