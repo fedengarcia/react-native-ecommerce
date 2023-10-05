@@ -40,15 +40,20 @@ const Profile = ({navigation}) => {
   const confirmImage = () => {
     dispatch(setProfileImage(imageProfile))
   }
-
+  
   return (
       <View style={styles.container}>
          <Header title={"Profile"}/>
          <View style={styles.profileContainer}>
-            <Image style={styles.image} source={imageProfile ?? ProfilePicture}/>
-            <TouchableOpacity style={styles.cameraButton} onPress={pickImage}>
-              <Text style={styles.buttonText}>Add profile picture</Text>
-            </TouchableOpacity>
+            <View style={styles.imageProfileContainer}>
+              <Image style={styles.image} source={imageProfile ?? ProfilePicture}/>
+              <TouchableOpacity style={styles.cameraButton} onPress={pickImage}>
+                <Text style={styles.buttonText}>{imageProfile ? 'Modify profile picture' : 'Add profile picture'}</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.userInfoContainer}>
+              <Text style={styles.infoText}>{user}</Text>
+            </View>
          </View>
       </View>
   );
