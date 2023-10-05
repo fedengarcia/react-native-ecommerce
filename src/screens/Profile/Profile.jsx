@@ -5,13 +5,14 @@ import { Header } from '../../components';
 import * as ImagePicker from 'expo-image-picker';
 import { useDispatch, useSelector } from 'react-redux';
 import ProfilePicture from '../../../assets/profilePic.png';
-import { setProfileImage } from '../../features/auth/authSlice';
+import { logOut, setProfileImage } from '../../features/auth/authSlice';
+import { usePostProfileImageMutation } from '../../services/authAPI';
 
 
 
 const Profile = ({navigation}) => {
-  const user = useSelector(state => state.auth.user);
-  const imageProfile = useSelector(state => state.auth.profileImage);
+  const {user, localId, profileImage} = useSelector(state => state.auth);
+  const [triggerSaveProfileImage] = usePostProfileImageMutation();
   const dispatch = useDispatch();
 
 
@@ -32,28 +33,42 @@ const Profile = ({navigation}) => {
         quality: 0.4
       });
 
-      if (!result.canceled) dispatch(setProfileImage(`${result.assets[0].uri}`));
+      if (!result.canceled) {
+        console.log("RESULT 1", result.assets[0])
+        dispatch(setProfileImage(`${result.assets[0].uri}`))
+        confirmImage(`${result.assets[0].uri}`);
+      };
       
     }
   }
 
-  const confirmImage = () => {
-    dispatch(setProfileImage(imageProfile))
+  const confirmImage = (image) => {
+    console.log("GUARDANDO", image + '------' + localId)
+    triggerSaveProfileImage({image, localId}).then(result => {
+      console.log("RESULT", result)
+    })
   }
+
   return (
       <View style={styles.container}>
          <Header title={"Profile"}/>
          <View style={styles.profileContainer}>
             <View style={styles.imageProfileContainer}>
-              {imageProfile ? <Image style={styles.image} source={{uri: imageProfile }}/>
-              : <Image style={styles.image} source={ProfilePicture}/>}
+              <Image 
+                style={styles.image}
+                source={profileImage ? {uri: profileImage } : ProfilePicture}
+              />
               <TouchableOpacity style={styles.cameraButton} onPress={pickImage}>
-                <Text style={styles.buttonText}>{imageProfile ? 'Modify profile picture' : 'Add profile picture'}</Text>
+                <Text style={styles.buttonText}>{profileImage ? 'Modify profile picture' : 'Add profile picture'}</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.userInfoContainer}>
               <Text style={styles.infoText}>{user}</Text>
+              <TouchableOpacity style={[styles.cameraButton, {width: '50%', marginTop: 50}]} onPress={() => dispatch(logOut())}>
+                <Text style={styles.buttonText}>Logout</Text>
+              </TouchableOpacity>
             </View>
+
          </View>
       </View>
   );
