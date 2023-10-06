@@ -6,7 +6,7 @@ import * as ImagePicker from 'expo-image-picker';
 import { useDispatch, useSelector } from 'react-redux';
 import ProfilePicture from '../../../assets/profilePic.png';
 import { logOut, setProfileImage } from '../../features/auth/authSlice';
-import { usePostProfileImageMutation } from '../../services/authAPI';
+import { usePostProfileImageMutation } from '../../services/shopAPI';
 
 
 
@@ -34,7 +34,6 @@ const Profile = ({navigation}) => {
       });
 
       if (!result.canceled) {
-        console.log("RESULT 1", result.assets[0])
         dispatch(setProfileImage(`${result.assets[0].uri}`))
         confirmImage(`${result.assets[0].uri}`);
       };
@@ -43,9 +42,8 @@ const Profile = ({navigation}) => {
   }
 
   const confirmImage = (image) => {
-    console.log("GUARDANDO", image + '------' + localId)
     triggerSaveProfileImage({image, localId}).then(result => {
-      console.log("RESULT", result)
+      console.log("Imagen cargada correctamente")
     })
   }
 
