@@ -7,7 +7,18 @@ export const styles = StyleSheet.create({
         width: '100%',
         backgroundColor: COLORS.primary,
         alignItems:'center',
-        padding: 20,
         paddingTop: 50
+    },
+    withOutLocation:{
+        width: 'auto',
+        height: 200,
+        borderWidth: 2,
+        padding: 10,
+        borderColor: COLORS.secondary,
+        alignItems: 'flex-start',
+        justifyContent: 'center'
+    },
+    textDescription:{
+        fontSize: 80
     }
 })

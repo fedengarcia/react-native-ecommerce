@@ -6,5 +6,6 @@ import CategoriesList from './CategoriesList/CategoriesLIst';
 import Login from './Login/Login';
 import SignUp from './SignUp/SignUp';
 import Profile from './Profile/Profile';
+import Location from './Location/Location';
 
-export {Home, Details, Cart, Orders, CategoriesList, Login, SignUp, Profile}
+export {Home, Details, Cart, Orders, CategoriesList, Login, SignUp, Profile, Location}
