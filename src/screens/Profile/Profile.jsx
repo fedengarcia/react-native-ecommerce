@@ -62,6 +62,9 @@ const Profile = ({navigation}) => {
             </View>
             <View style={styles.userInfoContainer}>
               <Text style={styles.infoText}>{user}</Text>
+              <TouchableOpacity style={[styles.cameraButton, {width: '50%', marginTop: 50}]} onPress={() => navigation.navigate("Location")}>
+                <Text style={styles.buttonText}>Location</Text>
+              </TouchableOpacity>
               <TouchableOpacity style={[styles.cameraButton, {width: '50%', marginTop: 50}]} onPress={() => dispatch(logOut())}>
                 <Text style={styles.buttonText}>Logout</Text>
               </TouchableOpacity>
