@@ -6,7 +6,9 @@ export const styles = StyleSheet.create({
         flex: 1,
         width: '100%',
         backgroundColor: COLORS.primary,
-        alignItems:'center'
+        alignItems:'center',
+        padding: 20,
+
     },
     productsListContainer:{
         width:  '100%',

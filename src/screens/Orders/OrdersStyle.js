@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
         backgroundColor: COLORS.primary,
         alignItems:'center',
         padding: 20,
-        paddingTop: 50
+
     },
     flatList:{
         width: '100%'

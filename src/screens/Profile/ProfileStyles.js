@@ -6,10 +6,8 @@ export const styles = StyleSheet.create({
         flex: 1,
         width: '100%',
         backgroundColor: COLORS.primary,
-        // alignItems:'center',
-        // justifyContent:'center',
+        alignItems:'center',
         padding: 20,
-        paddingTop: 50
     },
     profileContainer:{
         width: '100%',
