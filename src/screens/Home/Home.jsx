@@ -1,4 +1,4 @@
-import { FlatList, Text, TouchableOpacity, View } from 'react-native'
+import { ActivityIndicator, FlatList, Text, TouchableOpacity, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { Card, Filters, Header, SearchInput } from '../../components'
 import { styles } from './HomeStyles'
@@ -6,6 +6,7 @@ import { DATA_PRODUCTS } from '../../data/products'
 import ProductItem from '../../components/HomeComponents/ProductItem/ProductItem'
 import { useSelector } from 'react-redux'
 import { useGetProductsByCategoryQuery, useGetProductsQuery } from '../../services/shopAPI'
+import { COLORS } from '../../global/COLORS'
 
 
 const Home = ({navigation}) => {
@@ -15,14 +16,16 @@ const Home = ({navigation}) => {
   const {data, isLoading} = categorySelected === 'all' ? useGetProductsQuery() : useGetProductsByCategoryQuery(categorySelected)
 
   useEffect(() => {
-    if(data){
-      const productsSelected = data.filter(prod => prod.title.includes(keyword));
-      setProductsList(productsSelected);
+    if(data && keyword !== ''){
+      let productsData = data?.filter(prod => prod.title.includes(keyword));
+      setProductsList(productsData)
+    } else{
+      setProductsList(data)
     }
+      
+  }, [keyword, data, categorySelected]);
 
-  }, [keyword]);
-
-  return (
+return (
     <View style={styles.container}>
       <Header title={"Home"} navigation={navigation}/>
       <SearchInput
@@ -30,19 +33,23 @@ const Home = ({navigation}) => {
       />
       <Filters navigation={navigation}/>
       <View style={styles.productsListContainer}>
-        {data?.length > 0 ?
-        <FlatList
-          style={styles.flatList}
-          numColumns={2}
-          horizontal={false}
-          data={keyword !== "" ? productsList : data}
-          keyExtractor={this.keyExtractor}
-          renderItem={({item}) => 
-          <TouchableOpacity style={styles.itemContainer} onPress={() => navigation.navigate("Details", {product: item})}>
-            <ProductItem product={item}/>
-          </TouchableOpacity>}
-        />:
-          <Text style={styles.noResultsText}>No hay productos para mostrar</Text>
+        {isLoading ?
+          <ActivityIndicator style={styles.loader} size="large" color={COLORS.secondary}/>
+        : productsList?.length > 0 
+        ?
+          <FlatList
+            style={styles.flatList}
+            numColumns={2}
+            horizontal={false}
+            data={productsList}
+            keyExtractor={item => item.id}
+            renderItem={({item}) => 
+            <TouchableOpacity style={styles.itemContainer} onPress={() => navigation.navigate("Details", {product: item})}>
+              <ProductItem product={item}/>
+            </TouchableOpacity>}
+          />
+        : 
+          <Text style={styles.noResultsText}>No results for your search</Text>
         }
       </View>
     </View>

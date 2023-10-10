@@ -3,6 +3,7 @@ import {FlatList, Pressable, Text, TouchableOpacity, View} from 'react-native';
 import {styles} from './OrdersStyle';
 import { CartItem, Header } from '../../components';
 import { useGetOrdersQuery } from '../../services/shopAPI'
+import { useSelector } from 'react-redux';
 
 
 const Orders = ({navigation}) => {
