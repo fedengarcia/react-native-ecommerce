@@ -5,7 +5,8 @@ import Feather from '@expo/vector-icons/Feather';
 import { COLORS } from '../../../global/COLORS';
 import Card from '../../Card/Card';
 
-const CartItem = ({itemCart, navigation}) => {
+
+const CartItem = ({itemCart, navigation, handleDeleteItem}) => {
 
     return (
         <Card style={styles.container}>
@@ -17,7 +18,7 @@ const CartItem = ({itemCart, navigation}) => {
                     <Text style={styles.detailsText}>{`Cantidad: ${itemCart?.quantity}`}</Text>
                     <Text style={styles.detailsText}>{`Precio: ${itemCart?.price}`}</Text>
                 </View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => handleDeleteItem({type:"single",itemId:itemCart.id})}>
                     <Feather name="trash" size={50} color={COLORS.secondary }/>
                 </TouchableOpacity>
             </View>
