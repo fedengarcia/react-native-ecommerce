@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
         width: '100%',
         backgroundColor: COLORS.primary,
         alignItems:'center',
-        paddingTop: 50
+        padding: 20
     },
     withOutLocation:{
         width: 'auto',

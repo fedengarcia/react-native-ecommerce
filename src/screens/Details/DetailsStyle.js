@@ -6,7 +6,8 @@ export const styles = StyleSheet.create({
         flex: 1,
         width: '100%',
         backgroundColor: COLORS.backgroundGray1,
-        alignItems:'center'
+        alignItems:'center',
+        padding: 20
     },
     cardContainer:{
         borderRadius: 20,
