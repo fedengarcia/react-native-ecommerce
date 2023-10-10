@@ -19,12 +19,15 @@ const Cart = ({navigation}) => {
     return (
         <View style={styles.container}>
             <Header title={'Cart'} navigation={navigation}/>
+            {cart.length > 0 ?
             <FlatList
                 style={styles.flatList}
                 data={cart}
                 keyExtractor={item => item.id}
                 renderItem={({item}) => <CartItem navigation={navigation} itemCart={item}/>}
-            />
+            />: 
+                <Text style={styles.noResultsText}>Add some products to your cart!</Text>
+            }
             <View style={styles.finalDetailsContainer}>
                 <View style={styles.finalPriceContainer}>
                     <Text style={styles.finalPrice}>{`Total: $${total}`}</Text>

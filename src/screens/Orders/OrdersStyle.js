@@ -13,4 +13,9 @@ export const styles = StyleSheet.create({
     flatList:{
         width: '100%'
     },
+    noResultsText:{
+        fontSize: 60,
+        textAlign: 'center',
+        color: COLORS.backgroundWhite
+    }
 })

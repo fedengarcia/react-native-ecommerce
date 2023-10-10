@@ -47,5 +47,10 @@ export const styles = StyleSheet.create({
     finalPrice:{
         fontSize: 60,
         color: COLORS.secondary
+    },
+    noResultsText:{
+        fontSize: 60,
+        textAlign: 'center',
+        color: COLORS.backgroundWhite
     }
 })
