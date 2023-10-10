@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
         width: '100%',
         backgroundColor: COLORS.primary,
         alignItems:'center',
+        justifyContent: 'space-between',
         padding: 20,
     },
     flatList:{
