@@ -8,7 +8,7 @@ import { removeItem } from '../../features/cart/cartSlice';
 
 
 const Cart = ({navigation}) => {
-    const user = useSelector(state => state.auth.user)
+    const {user, localId} = useSelector(state => state.auth)
     const cart = useSelector(state => state.cart.items);
     const total = useSelector(state => state.cart.total); 
     const [ triggerPost, result ] = usePostOrderMutation(); 
@@ -21,7 +21,7 @@ const Cart = ({navigation}) => {
     }
   
     const handleConfirmCart = () => {
-        triggerPost({total, cart, user: user})
+        triggerPost({total, cart, user: {email: user, id: localId}})
     }
 
     useEffect(() => {

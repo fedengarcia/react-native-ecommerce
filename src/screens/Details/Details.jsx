@@ -15,7 +15,7 @@ const Details = ({route, navigation}) => {
 
   return (
     <View style={styles.container}>
-      <Header title={'Detalle'} navigation={navigation}/>
+      <Header title={'Details'} navigation={navigation}/>
         <Card style={styles.cardContainer}>
           <Image 
             style={styles.image}
