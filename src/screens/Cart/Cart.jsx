@@ -1,20 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {FlatList, Pressable, Text, TouchableOpacity, View} from 'react-native';
 import {styles} from './CartStyles';
 import { CartItem, Header } from '../../components';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { usePostOrderMutation } from '../../services/shopAPI';
+import { removeItem } from '../../features/cart/cartSlice';
 
 
 const Cart = ({navigation}) => {
+    const user = useSelector(state => state.auth.user)
     const cart = useSelector(state => state.cart.items);
     const total = useSelector(state => state.cart.total); 
     const [ triggerPost, result ] = usePostOrderMutation(); 
 
-    const handleConfirmCart = () => {
-        triggerPost({total, cart, user: 'LoggedUser'})
+    const dispatch = useDispatch();
+    const [itemsCart, setItemsCart] = useState([]);
+
+    const handleDeleteItem = (type, itemId) => {
+        dispatch(removeItem(type, itemId))
     }
   
+    const handleConfirmCart = () => {
+        triggerPost({total, cart, user: user})
+    }
+
+    useEffect(() => {
+        setItemsCart(cart)
+    }, [cart]);
+
 
     return (
         <View style={styles.container}>
@@ -22,9 +35,9 @@ const Cart = ({navigation}) => {
             {cart.length > 0 ?
             <FlatList
                 style={styles.flatList}
-                data={cart}
+                data={itemsCart}
                 keyExtractor={item => item.id}
-                renderItem={({item}) => <CartItem navigation={navigation} itemCart={item}/>}
+                renderItem={({item}) => <CartItem navigation={navigation} itemCart={item} handleDeleteItem={handleDeleteItem}/>}
             />: 
                 <Text style={styles.noResultsText}>Add some products to your cart!</Text>
             }
@@ -36,7 +49,7 @@ const Cart = ({navigation}) => {
                     <TouchableOpacity style={[styles.button, styles.buttonConfirm]} onPress={handleConfirmCart}>
                         <Text style={styles.buttonText}>Buy</Text>
                     </TouchableOpacity >
-                    <TouchableOpacity style={[styles.button, styles.buttonDelete]}>
+                    <TouchableOpacity style={[styles.button, styles.buttonDelete]} onPress={() => handleDeleteItem({type:"all", itemId: undefined})}>
                         <Text style={styles.buttonText}>Delete</Text>
                     </TouchableOpacity>
                 </View>
