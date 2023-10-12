@@ -31,6 +31,18 @@ export const insertNewSession = ({localId, email, token}) => {
     return promise;
 }
 
+export const deleteSession = ({localId}) => {
+    const promise = new Promise((resolve, reject) => {
+        db.transaction(tx => {
+            tx.executeSql('DELETE FROM sessions (localId) VALUES (?)',
+                [localId],
+                (_, result) => resolve(result),
+                (_, error) => reject(error)
+            )
+        })
+    })
+    return promise;
+}
 
 export const fetchSession = () => {
     const promise = new Promise((resolve, reject) => {
