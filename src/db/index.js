@@ -2,6 +2,8 @@ import * as SQLite from 'expo-sqlite';
 
 const db = SQLite.openDatabase('sessions.db');
 
+
+// This db is created in the local memory of the phone
 export const initDB = () => {
     const promise =  new Promise(({resolve, reject}) => {
         db.transaction(tx => {
@@ -14,5 +16,18 @@ export const initDB = () => {
         })
     })
 
+    return promise;
+}
+
+
+export const insertNewSession = ({localId, email, token}) => {
+    const promise = new Promise((resolve, reject) => {
+        db.transaction(tx => {
+            tx.executeSql('INSERT INTO sessions (localId, email, token) (?,?,?);',
+            [localId, email, token]),
+            (_, result) => resolve(result),
+            (_, error) => reject(error)
+        })
+    })
     return promise;
 }
