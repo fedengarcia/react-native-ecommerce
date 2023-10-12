@@ -17,10 +17,12 @@ export const cartSlice = createSlice({
                 const itemsUpdated = state.items.map(item => {
                     if(item.id === action.payload.id){
                         item.quantity += action.payload.quantity;
+                        // return item;
                     }
+                    // return item;
                 }) 
                 const total = itemsUpdated.reduce((acc, current) => (acc += current.price * current.quantity));
-                state = {
+                return {
                     ...state,
                     items: itemsUpdated,
                     total: total,
@@ -29,7 +31,7 @@ export const cartSlice = createSlice({
             }else{
                 state.items.push(action.payload);
                 const total = state.items.reduce((acc,current) => (acc += current.price * current.quantity));
-                state = {
+                return {
                     ...state,
                     total: total,
                     updatedAt: new Date().toDateString()
