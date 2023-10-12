@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import ProfilePicture from '../../../assets/profilePic.png';
 import { logOut, setProfileImage } from '../../features/auth/authSlice';
 import { usePostProfileImageMutation } from '../../services/shopAPI';
+import { deleteSession } from '../../db';
 
 
 
@@ -47,6 +48,11 @@ const Profile = ({navigation}) => {
     })
   }
 
+  const handleLogOut = () => {
+    dispatch(logOut())
+    deleteSession()
+  }
+
   return (
       <View style={styles.container}>
          <Header title={"Profile"}/>
@@ -65,7 +71,7 @@ const Profile = ({navigation}) => {
               <TouchableOpacity style={[styles.cameraButton, {width: '50%', marginTop: 50}]} onPress={() => navigation.navigate("Location")}>
                 <Text style={styles.buttonText}>Location</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={[styles.cameraButton, {width: '50%', marginTop: 50}]} onPress={() => dispatch(logOut())}>
+              <TouchableOpacity style={[styles.cameraButton, {width: '50%', marginTop: 50}]} onPress={handleLogOut}>
                 <Text style={styles.buttonText}>Logout</Text>
               </TouchableOpacity>
             </View>
