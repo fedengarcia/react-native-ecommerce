@@ -19,7 +19,7 @@ const SignUp = ({navigation}) => {
       email,
       password
     }).then(result => {
-      dispatch(setUser(result))
+      dispatch(setUser(result.data))
     }).catch(err => console.log(err))
   }
 

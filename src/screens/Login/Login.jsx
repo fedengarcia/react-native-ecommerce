@@ -5,6 +5,7 @@ import { Card } from '../../components';
 import { useLoginMutation } from '../../services/authAPI';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../features/auth/authSlice';
+import { insertNewSession } from '../../db';
 
 
 const Login = ({navigation}) => {
@@ -19,6 +20,12 @@ const Login = ({navigation}) => {
       password
     }).then(result => {
       dispatch(setUser(result))
+      insertNewSession({
+        localId: result.data.localId,
+        email: result.data.email,
+        token: result.data.idToken
+      }).then(result =>  console.log(result))
+      .catch(err =>  console.log(err))
     }).catch(err => console.log(err))
   }
 
