@@ -16,8 +16,8 @@ const Cart = ({navigation}) => {
     const dispatch = useDispatch();
     const [itemsCart, setItemsCart] = useState([]);
 
-    const handleDeleteItem = (type, itemId) => {
-        dispatch(removeItem(type, itemId))
+    const handleDeleteItem = (item) => {
+        dispatch(removeItem(item))
     }
   
     const handleConfirmCart = () => {

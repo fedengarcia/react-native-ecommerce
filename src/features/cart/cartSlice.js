@@ -17,12 +17,13 @@ export const cartSlice = createSlice({
                 const itemsUpdated = state.items.map(item => {
                     if(item.id === action.payload.id){
                         item.quantity += action.payload.quantity;
-                        // return item;
+                        return item;
                     }
-                    // return item;
+                    return item;
                 }) 
-                const total = itemsUpdated.reduce((acc, current) => (acc += current.price * current.quantity));
-                return {
+                const total = itemsUpdated.reduce((acc, current) => (acc += current.price * current.quantity), 0);
+                console.log(total)
+                state =  {
                     ...state,
                     items: itemsUpdated,
                     total: total,
@@ -30,8 +31,8 @@ export const cartSlice = createSlice({
                 }
             }else{
                 state.items.push(action.payload);
-                const total = state.items.reduce((acc,current) => (acc += current.price * current.quantity));
-                return {
+                const total = state.items.reduce((acc,current) => (acc += current.price * current.quantity), 0);
+                state = {
                     ...state,
                     total: total,
                     updatedAt: new Date().toDateString()
@@ -40,8 +41,8 @@ export const cartSlice = createSlice({
         },
         removeItem: (state,action) => {
             let itemsUpdated = []
-            const itemId = action.payload.id;
-            if(action.payload.type === 'single') itemsUpdated = state.items.filter(element => element.id === itemId);
+            const itemId = action.payload.itemId;
+            if(action.payload.type === 'single') itemsUpdated = state.items.filter(element => element.id !== itemId);
             return state = {
                 ...state,
                 items: itemsUpdated
