@@ -34,7 +34,7 @@ export const insertNewSession = ({localId, email, token}) => {
 export const deleteSession = () => {
     const promise = new Promise((resolve, reject) => {
         db.transaction(tx => {
-            tx.executeSql('DELETE FROM sessions',
+            tx.executeSql(`DELETE FROM sessions`,
                 [],
                 (_, result) => resolve(result),
                 (_, error) => reject(error)
