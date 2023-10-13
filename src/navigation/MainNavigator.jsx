@@ -10,7 +10,7 @@ function MainNavigator() {
   const {user, localId} = useSelector(state => state.auth);
   const {data} = useGetProfileImageQuery(localId);
   const dispatch = useDispatch();
-
+  
   useEffect(() => {
     getSession();
   }, []);
@@ -20,13 +20,12 @@ function MainNavigator() {
       dispatch(setProfileImage(data.image))
   }, [data]);
 
+
   const getSession = async () => {
     try {
       const sessions = await fetchSession();
-      console.log(sessions)
       if(sessions.rows.length > 0){
         const user = sessions.rows._array[0]
-        console.log(user)
         dispatch(setUser(user))
       }
     } catch (error) {
