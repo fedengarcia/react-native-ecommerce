@@ -13,6 +13,7 @@ export const cartSlice = createSlice({
     reducers: {
         addItem: (state, action) => {
             const productRepeated = state.items.find(item => item.id === action.payload.id);
+            let total = state.total
             if(productRepeated){
                 const itemsUpdated = state.items.map(item => {
                     if(item.id === action.payload.id){
@@ -21,23 +22,14 @@ export const cartSlice = createSlice({
                     }
                     return item;
                 }) 
-                const total = itemsUpdated.reduce((acc, current) => (acc += current.price * current.quantity), 0);
-                console.log(total)
-                state =  {
-                    ...state,
-                    items: itemsUpdated,
-                    total: total,
-                    updatedAt: new Date().toDateString()
-                }
+                state.items = itemsUpdated
+                total = itemsUpdated.reduce((acc, current) => (acc += current.price * current.quantity), 0);
             }else{
                 state.items.push(action.payload);
-                const total = state.items.reduce((acc,current) => (acc += current.price * current.quantity), 0);
-                state = {
-                    ...state,
-                    total: total,
-                    updatedAt: new Date().toDateString()
-                }
+                total = state.items.reduce((acc,current) => (acc += current.price * current.quantity), 0);
             }
+            state.total = total
+            state.updatedAt = new Date().toDateString()
         },
         removeItem: (state,action) => {
             let itemsUpdated = []

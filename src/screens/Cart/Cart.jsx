@@ -12,7 +12,7 @@ const Cart = ({navigation}) => {
     const cart = useSelector(state => state.cart.items);
     const total = useSelector(state => state.cart.total); 
     const [ triggerPost, result ] = usePostOrderMutation(); 
-
+    
     const dispatch = useDispatch();
     const [itemsCart, setItemsCart] = useState([]);
 
@@ -28,11 +28,10 @@ const Cart = ({navigation}) => {
         setItemsCart(cart)
     }, [cart]);
 
-
     return (
         <View style={styles.container}>
             <Header title={'Cart'} navigation={navigation}/>
-            {cart.length > 0 ?
+            {cart?.length > 0 ?
             <FlatList
                 style={styles.flatList}
                 data={itemsCart}
