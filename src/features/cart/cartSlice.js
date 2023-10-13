@@ -35,10 +35,11 @@ export const cartSlice = createSlice({
             let itemsUpdated = []
             const itemId = action.payload.itemId;
             if(action.payload.type === 'single') itemsUpdated = state.items.filter(element => element.id !== itemId);
-            return state = {
-                ...state,
-                items: itemsUpdated
-            }
+            const total = itemsUpdated.reduce((acc,current) => (acc += current.price * current.quantity), 0);
+
+            state.items = itemsUpdated
+            state.total = total
+            state.updatedAt = new Date().toDateString()
         }
     }
 })
