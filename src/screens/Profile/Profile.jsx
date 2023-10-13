@@ -48,9 +48,11 @@ const Profile = ({navigation}) => {
     })
   }
 
-  const handleLogOut = () => {
+  const handleLogOut = async () => {
     dispatch(logOut())
-    deleteSession()
+    await deleteSession(localId)
+    .then(res => console.log("Se borro la session", res))
+    .catch(err => console.log("Error al borrar la session",err))
   }
 
   return (
@@ -68,9 +70,9 @@ const Profile = ({navigation}) => {
             </View>
             <View style={styles.userInfoContainer}>
               <Text style={styles.infoText}>{user}</Text>
-              <TouchableOpacity style={[styles.cameraButton, {width: '50%', marginTop: 50}]} onPress={() => navigation.navigate("Location")}>
+              {/* <TouchableOpacity style={[styles.cameraButton, {width: '50%', marginTop: 50}]} onPress={() => navigation.navigate("Location")}>
                 <Text style={styles.buttonText}>Location</Text>
-              </TouchableOpacity>
+              </TouchableOpacity> */}
               <TouchableOpacity style={[styles.cameraButton, {width: '50%', marginTop: 50}]} onPress={handleLogOut}>
                 <Text style={styles.buttonText}>Logout</Text>
               </TouchableOpacity>

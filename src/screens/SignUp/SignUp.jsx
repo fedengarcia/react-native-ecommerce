@@ -5,6 +5,7 @@ import { Card } from '../../components';
 import { useSignUpMutation } from '../../services/authAPI';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../features/auth/authSlice';
+import { insertNewSession } from '../../db';
 
 
 const SignUp = ({navigation}) => {
@@ -18,8 +19,13 @@ const SignUp = ({navigation}) => {
     triggerSignUp({
       email,
       password
-    }).then(result => {
+    }).then(async result => {
       dispatch(setUser(result.data))
+      await insertNewSession({
+        localId: result.data.localId,
+        email: result.data.email,
+        token: result.data.idToken
+      })
     }).catch(err => console.log(err))
   }
 

@@ -14,18 +14,17 @@ const Login = ({navigation}) => {
   const [triggerLogin] = useLoginMutation();
   const dispatch = useDispatch();
 
-  const handleLogin = () => {
-    triggerLogin({
+  const handleLogin = async () => {
+    await triggerLogin({
       email,
       password
-    }).then(result => {
-      dispatch(setUser(result))
-      insertNewSession({
+    }).then(async result => {
+      dispatch(setUser(result.data))
+      await insertNewSession({
         localId: result.data.localId,
         email: result.data.email,
         token: result.data.idToken
-      }).then(result =>  console.log(result))
-      .catch(err =>  console.log(err))
+      })
     }).catch(err => console.log(err))
   }
 
