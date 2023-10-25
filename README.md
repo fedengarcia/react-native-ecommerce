@@ -1,4 +1,4 @@
-## React Native E-commerce
+## React Native Ecommerce
 
 Hi there 👋 
 
