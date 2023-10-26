@@ -15,7 +15,7 @@ These instructions will allow you to obtain a working copy of the project on you
 To access the project locally, you can clone the project. Copy the link from the CODE, and you'll be able to clone it in the console.
 
 ```
-git clone https://github.com/HilarioGutierrez/Hilario-Reactjs.git
+git clone https://github.com/fedengarcia/react-native-ecommerce.git
 ```
 
 ### Installation 🔧
