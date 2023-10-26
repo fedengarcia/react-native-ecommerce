@@ -4,7 +4,7 @@ Hi there 👋
 
 In this repository you will find a partially developed E-commerce without integration with a payment gateway.
 
-It was developed with the idea of learning concepts and basics of React Native, redux, authentication and data persistence.
+It was developed with the idea of learning concepts and basics of React Native, redux and redux toolkit, authentication and data persistence.
 
 ## Getting Started 🚀
 
