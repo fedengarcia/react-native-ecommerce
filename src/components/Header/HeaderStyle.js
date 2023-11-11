@@ -9,31 +9,30 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingTop: 60
     },
     text:{
         width: '100%',
-        margin: 50,
-        marginLeft: 200,
-        fontSize: 70,
+        margin: 20,
+        marginHorizontal: 50,
+        fontSize: 50,
         fontWeight: '500',
         color: COLORS.secondary,
         fontFamily: 'PTSansRegular'
     },
     actionHeaderContainer:{
         width: '20%',
+        justifyContent: 'center',
         alignItems:'flex-start',
     },
     buttonBack: {
-        width: 'auto',
-        padding: 20
+        width: '100%',
     },
     buttonBackText: {
-        padding: 20,
+        padding: 10,
         textAlign:'center',
         opacity: 0.8,
         backgroundColor: COLORS.secondary,
-        fontSize: 30,
+        fontSize: 20,
         borderRadius: 50,
         textTransform: 'uppercase',
         fontWeight: 'bold',

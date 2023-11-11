@@ -10,12 +10,13 @@ const Header = ({title, navigation}) => {
         <View style={styles.container}>
             
             <View style={styles.actionHeaderContainer}>
-                {!hasBack.includes(title) && 
+                {!hasBack.includes(title) ? 
                     <TouchableOpacity style={styles.buttonBack} onPress={() => navigation.goBack()}>
                             <Text style={styles.buttonBackText}>
                                 back
                             </Text>
                     </TouchableOpacity>
+                    :<></>
                 }
             </View>
             
