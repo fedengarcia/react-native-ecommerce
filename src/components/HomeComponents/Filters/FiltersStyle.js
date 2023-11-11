@@ -5,19 +5,13 @@ export const styles = StyleSheet.create({
     container:{
         flexDirection: 'row',
         justifyContent:'flex-start',
-        alignItems:'center',
+        alignItems:'flex-start',
         width: '100%',
-        height: 200,
+        height: 100,
         paddingTop: 20,
-        paddingHorizontal: 20,
-        // shadowColor: '#000',
-        // shadowOffset: {height: 5, width: 3},
-        // elevation: 10,
-        // shadowOpacity: 1,
-        // shadowRadius: 1,
     },
     filterItemButton:{
-        height: '60%'
+        height: '100%'
     },
     filterItem:{
         alignItems:'center',
@@ -26,8 +20,8 @@ export const styles = StyleSheet.create({
         borderRadius: 10
     },
     text:{
-        padding: 20,
-        fontSize: 50,
+        padding: 5,
+        fontSize: 30,
         fontWeight: '500',
         color: COLORS.primary
     }

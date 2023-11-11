@@ -6,8 +6,8 @@ export const styles = StyleSheet.create({
         flex:1,
         backgroundColor: 'transparent',
         elevation: 1,
-        padding: 20,
-        marginHorizontal: 20,
+        padding: 10,
+        marginHorizontal: 10,
         marginVertical: 20,
         borderWidth: 1,
         borderColor: COLORS.backgroundGray1,
@@ -16,12 +16,12 @@ export const styles = StyleSheet.create({
     },
     image:{
         width: '100%',
-        height: 500,
+        height: 200,
         borderRadius: 10
     },
     name:{
         color: COLORS.primary,
-        fontSize: 80,
+        fontSize: 30,
         margin: 10,
     },
     details:{
@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
         justifyContent: 'space-between'
     },
     detailsText:{
-        fontSize: 50,
+        fontSize: 20,
         margin: 10,
         color: COLORS.primary,
     }

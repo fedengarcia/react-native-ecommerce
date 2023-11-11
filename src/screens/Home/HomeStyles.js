@@ -7,12 +7,10 @@ export const styles = StyleSheet.create({
         width: '100%',
         backgroundColor: COLORS.primary,
         alignItems:'center',
-        padding: 20,
-
+        padding: 10,
     },
     productsListContainer:{
         width:  '100%',
-        paddingHorizontal: 10,
         marginTop: 15,
     },
     flatList: {
@@ -22,7 +20,7 @@ export const styles = StyleSheet.create({
         width:'50%',
     },
     noResultsText:{
-        fontSize: 60,
+        fontSize: 30,
         textAlign: 'center',
         color: COLORS.backgroundWhite
     }
