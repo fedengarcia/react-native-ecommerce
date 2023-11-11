@@ -16,7 +16,7 @@ const ProductItem = ({product, navigation}) => {
             </View>
             <View style={styles.details}>
                 <View>
-                    <Text style={styles.detailsText}>Precio: ${product?.price}</Text>
+                    <Text style={styles.detailsText}>${product?.price}</Text>
                 </View>
             </View>
         </Card>

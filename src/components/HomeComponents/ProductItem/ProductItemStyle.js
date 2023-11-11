@@ -21,8 +21,9 @@ export const styles = StyleSheet.create({
     },
     name:{
         color: COLORS.primary,
-        fontSize: 30,
+        fontSize: 20,
         margin: 10,
+        textTransform: 'uppercase',
     },
     details:{
         flex: 1,
@@ -32,7 +33,7 @@ export const styles = StyleSheet.create({
         justifyContent: 'space-between'
     },
     detailsText:{
-        fontSize: 20,
+        fontSize: 30,
         margin: 10,
         color: COLORS.primary,
     }
