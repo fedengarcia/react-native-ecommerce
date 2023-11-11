@@ -19,7 +19,7 @@ const CartItem = ({itemCart, navigation, handleDeleteItem}) => {
                     <Text style={styles.detailsText}>{`Precio: ${itemCart?.price}`}</Text>
                 </View>
                 <TouchableOpacity onPress={() => handleDeleteItem({type:"single",itemId:itemCart.id})}>
-                    <Feather name="trash" size={50} color={COLORS.secondary }/>
+                    <Feather name="trash" size={30} color={COLORS.secondary }/>
                 </TouchableOpacity>
             </View>
         </Card>

@@ -16,18 +16,21 @@ export const styles = StyleSheet.create({
     finalDetailsContainer:{
         width: '100%',
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        borderTopWidth: 1,
+        borderTopColor: 'white',
     },
     cartActionsContainer:{
         width: '30%',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        margin: 5,
     },
     button:{
         width: '100%',
         height: 'auto',
-        margin: 20,
-        paddingVertical: 20,
+        margin: 5,
+        paddingVertical: 5,
         alignItems:'center',
         borderRadius: 20
     },
@@ -38,7 +41,7 @@ export const styles = StyleSheet.create({
         backgroundColor: COLORS.actionDelete
     },
     buttonText:{
-        fontSize: 60
+        fontSize: 30
     },
     finalPriceContainer:{
         width: '70%',
@@ -46,11 +49,11 @@ export const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     finalPrice:{
-        fontSize: 60,
+        fontSize: 30,
         color: COLORS.secondary
     },
     noResultsText:{
-        fontSize: 60,
+        fontSize: 30,
         textAlign: 'center',
         color: COLORS.backgroundWhite
     }

@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     },
     name:{
         color: COLORS.secondary,
-        fontSize: 50
+        fontSize: 30
     },
     details:{
         flex: 1,
@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
         justifyContent: 'space-between'
     },
     detailsText:{
-        fontSize: 50,
+        fontSize: 20,
         color: COLORS.secondary,
     }
 
