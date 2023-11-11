@@ -6,6 +6,8 @@ import { useSignUpMutation } from '../../services/authAPI';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../features/auth/authSlice';
 import { insertNewSession } from '../../db';
+import { COLORS } from '../../global/COLORS';
+import Feather from '@expo/vector-icons/Feather';
 
 
 const SignUp = ({navigation}) => {
@@ -35,9 +37,22 @@ const SignUp = ({navigation}) => {
           <View style={styles.loginContainer}>
             <Card style={styles.loginCard}>
               <Text style={styles.title}>Register to start</Text>
-              <TextInput style={styles.input} value={email} onChangeText={setEmail}/>
-              <TextInput style={styles.input} value={password} onChangeText={setPassword}/>
-              <TextInput style={styles.input} value={confirmPassword} onChangeText={setConfirmPassword}/>
+              <View style={styles.formLabelContainer}>
+                  <Feather name="mail" size={30} color={COLORS.primary}/>
+                  <Text style={styles.formLabel}>Email</Text>
+                </View>
+              <TextInput style={styles.formInput} value={email} onChangeText={setEmail} placeholder='example@...'/>
+              <View style={styles.formLabelContainer}>
+                  <Feather name="lock" size={30} color={COLORS.primary}/>
+                  <Text style={styles.formLabel}>Password</Text>
+              </View>
+              <TextInput style={styles.formInput} value={password} onChangeText={setPassword}/>
+
+              <View style={styles.formLabelContainer}>
+                  <Feather name="lock" size={30} color={COLORS.primary}/>
+                  <Text style={styles.formLabel}>Repeat password</Text>
+              </View>
+              <TextInput style={styles.formInput} value={confirmPassword} onChangeText={setConfirmPassword}/>
               <TouchableOpacity style={styles.button} onPress={handleSignUp}>
                 <Text style={styles.buttonText}>Sign up</Text>
               </TouchableOpacity>
