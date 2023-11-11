@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     text:{
         width: '100%',
         margin: 20,
-        marginHorizontal: 50,
+        marginHorizontal: 30,
         fontSize: 50,
         fontWeight: '500',
         color: COLORS.secondary,
@@ -25,9 +25,6 @@ export const styles = StyleSheet.create({
         alignItems:'flex-start',
     },
     buttonBack: {
-        width: '100%',
-    },
-    buttonBackText: {
         padding: 10,
         textAlign:'center',
         opacity: 0.8,
