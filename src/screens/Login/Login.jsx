@@ -6,6 +6,8 @@ import { useLoginMutation } from '../../services/authAPI';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../features/auth/authSlice';
 import { insertNewSession } from '../../db';
+import Feather from '@expo/vector-icons/Feather';
+import { COLORS } from '../../global/COLORS';
 
 
 const Login = ({navigation}) => {
@@ -31,12 +33,19 @@ const Login = ({navigation}) => {
 
   return (
       <View style={styles.container}>
-          {/* <Header title={'Login'} navigation={navigation}/> */}
           <View style={styles.loginContainer}>
             <Card style={styles.loginCard}>
               <Text style={styles.title}>Login to start</Text>
-              <TextInput style={styles.input}  value={email} onChangeText={setEmail}/>
-              <TextInput style={styles.input} value={password} onChangeText={setPassword}/>
+                <View style={styles.formLabelContainer}>
+                  <Feather name="mail" size={30} color={COLORS.primary}/>
+                  <Text style={styles.formLabel}>Email</Text>
+                </View>
+                <TextInput style={styles.formInput}  value={email} onChangeText={setEmail} placeholder='example@...'/>
+                <View style={styles.formLabelContainer}>
+                  <Feather name="lock" size={30} color={COLORS.primary}/>
+                  <Text style={styles.formLabel}>Password</Text>
+                </View>
+                <TextInput style={styles.formInput} value={password} onChangeText={setPassword}/>
               <TouchableOpacity style={styles.button} onPress={handleLogin}>
                 <Text style={styles.buttonText}>Login</Text>
               </TouchableOpacity>
