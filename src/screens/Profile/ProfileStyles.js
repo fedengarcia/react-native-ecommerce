@@ -20,30 +20,33 @@ export const styles = StyleSheet.create({
         alignItems:'center'
     },  
     image:{
-        height: 400,
-        width: 400,
+        height: 200,
+        width: 200,
         borderRadius: 300,
         marginBottom: 20
     },
     cameraButton: {
-        width: '80%',
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'center',
         borderRadius: 10,
         padding: 10,
+        paddingHorizontal: 5,
         backgroundColor: COLORS.secondary
     },
     buttonText: {
-        fontSize: 40,
+        fontSize: 20,
         color: COLORS.primary,
         alignSelf:'center'
     },
     userInfoContainer:{
-        marginTop: 50,
-        width: '50%',
+        marginTop: 20,
+        width: '100%',
         justifyContent:'center',
         alignItems:'center'
     },
     infoText:{
-        fontSize: 60,
+        fontSize: 30,
         color: COLORS.secondary
     }
 })

@@ -8,6 +8,8 @@ import ProfilePicture from '../../../assets/profilePic.png';
 import { logOut, setProfileImage } from '../../features/auth/authSlice';
 import { usePostProfileImageMutation } from '../../services/shopAPI';
 import { deleteSession } from '../../db';
+import Feather from '@expo/vector-icons/Feather';
+import { COLORS } from '../../global/COLORS';
 
 
 
@@ -65,6 +67,7 @@ const Profile = ({navigation}) => {
                 source={profileImage ? {uri: profileImage } : ProfilePicture}
               />
               <TouchableOpacity style={styles.cameraButton} onPress={pickImage}>
+                <Feather name="edit" size={30} color={COLORS.primary}/>
                 <Text style={styles.buttonText}>{profileImage ? 'Modify profile picture' : 'Add profile picture'}</Text>
               </TouchableOpacity>
             </View>
@@ -73,7 +76,7 @@ const Profile = ({navigation}) => {
               {/* <TouchableOpacity style={[styles.cameraButton, {width: '50%', marginTop: 50}]} onPress={() => navigation.navigate("Location")}>
                 <Text style={styles.buttonText}>Location</Text>
               </TouchableOpacity> */}
-              <TouchableOpacity style={[styles.cameraButton, {width: '50%', marginTop: 50}]} onPress={handleLogOut}>
+              <TouchableOpacity style={[styles.cameraButton, {width: '30%', marginTop: 20}]} onPress={handleLogOut}>
                 <Text style={styles.buttonText}>Logout</Text>
               </TouchableOpacity>
             </View>
