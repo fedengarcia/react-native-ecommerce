@@ -28,14 +28,14 @@ const SearchInput = ({onSearch}) => {
                 <Pressable onPress={search}>
                     <AntDesing
                         name="search1"
-                        size={60}
+                        size={30}
                         color={"white"}
                     />
                 </Pressable>
                 <Pressable onPress={clearInput}>
                     <AntDesing
                         name="delete"
-                        size={60}
+                        size={30}
                         color={"white"}
                     />
                 </Pressable>
