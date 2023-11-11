@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
         width: '100%'
     },
     noResultsText:{
-        fontSize: 60,
+        fontSize: 30,
         textAlign: 'center',
         color: COLORS.backgroundWhite
     }
