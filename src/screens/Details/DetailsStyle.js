@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     },
     cardContainer:{
         borderRadius: 20,
-        margin: 50,
+        margin: 10,
         width: '80%',
         height: 'auto',
         backgroundColor: COLORS.backgroundGray1,
@@ -19,38 +19,37 @@ export const styles = StyleSheet.create({
     },
     image:{
         width: '100%',
-        height: 600
+        height: 300,
+        borderRadius: 20,
     },
     textStyle: {
         fontFamily: 'PTSansRegular',
         color: COLORS.primary,
-        margin: 10,
-        marginHorizontal: 40,
+        margin: 5,
+        marginHorizontal: 10,
     },
     title:{
-        fontSize: 60,
+        fontSize: 30,
         fontWeight: "bold"
     },
     description: {
-        fontSize: 50
+        fontSize: 20
     },
     price:{
-        fontSize: 80
+        fontSize: 30
     },
     addCartButton:{
-        marginTop: 40,
+        // marginTop: 40,
         alignSelf:'center',
         borderRadius: 20,
-        padding: 20,
+        padding: 10,
         width: '80%',
         backgroundColor: COLORS.secondary,
         alignItems: 'center'
     },
     buttonText:{
-        fontSize: 50,
+        fontSize: 30,
         color: COLORS.primary,
-
-
     }
     
 })
